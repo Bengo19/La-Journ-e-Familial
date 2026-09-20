@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160a27">
+  <meta name="description" content="Fête familiale d’Halloween au parc Terre-des-Jeunes de Victoriaville, le 18 octobre 2026 de 10 h à 16 h, au profit de la Fondation L’Ami-Temps des Bois-Francs.">
+  <title>Fête familiale d’Halloween | Victoriaville</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23160a27'/%3E%3Cpath d='M18 31c0-10 6-17 14-17s14 7 14 17c0 11-6 19-14 19S18 42 18 31Z' fill='%23ff7a18'/%3E%3Cpath d='M31 15c-1-5 3-8 7-9-1 4-3 7-7 9Z' fill='%237adf72'/%3E%3Ccircle cx='27' cy='31' r='2.5' fill='%23160a27'/%3E%3Ccircle cx='37' cy='31' r='2.5' fill='%23160a27'/%3E%3Cpath d='M26 40c4 3 8 3 12 0' fill='none' stroke='%23160a27' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #160a27;
+      --ink-soft: #2c1744;
+      --orange: #ff7a18;
+      --orange-light: #ffb347;
+      --lime: #b8ef62;
+      --cream: #fff7e8;
+      --white: #ffffff;
+      --muted: #dacde7;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
+
+    .topbar {
+      position: relative;
+      z-index: 3;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(22,10,39,.9);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--orange);
+      color: var(--ink);
+      box-shadow: 0 8px 24px rgba(255,122,24,.28);
+    }
+    .mini-date { color: var(--muted); font-size: .93rem; font-weight: 700; }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(255,122,24,.22), transparent 25rem),
+        radial-gradient(circle at 12% 82%, rgba(184,239,98,.11), transparent 22rem),
+        linear-gradient(145deg, #160a27 0%, #29123e 57%, #160a27 100%);
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(255,179,71,.18);
+      border-radius: 50%;
+    }
+    .hero::before { width: 510px; height: 510px; right: -210px; top: -230px; }
+    .hero::after { width: 320px; height: 320px; left: -210px; bottom: -180px; }
+    .hero-grid {
+      padding: 5.5rem 0 6rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(2rem, 7vw, 7rem);
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin: 0 0 1.15rem;
+      padding: .45rem .75rem;
+      border: 1px solid rgba(184,239,98,.4);
+      border-radius: 999px;
+      background: rgba(184,239,98,.08);
+      color: var(--lime);
+      font-weight: 800;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); }
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(3.25rem, 8.2vw, 6.9rem);
+      line-height: .9;
+      letter-spacing: -.075em;
+      text-wrap: balance;
+    }
+    h1 span { color: var(--orange); }
+    .lede { max-width: 620px; margin: 1.6rem 0 0; color: #efe5f7; font-size: clamp(1.08rem, 2vw, 1.28rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 1.15rem;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 850;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--orange); color: var(--ink); box-shadow: 0 12px 32px rgba(255,122,24,.24); }
+    .button-secondary { border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.06); }
+    .button:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+
+    .date-card {
+      position: relative;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 30px;
+      background: rgba(255,255,255,.08);
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      backdrop-filter: blur(18px);
+      transform: rotate(2deg);
+    }
+    .date-card::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(255,179,71,.3);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+    .date-label { color: var(--orange-light); font-weight: 900; text-transform: uppercase; letter-spacing: .09em; }
+    .date-number { margin: .25rem 0 0; font-size: clamp(5rem, 12vw, 8.5rem); font-weight: 950; line-height: .9; letter-spacing: -.08em; }
+    .date-month { margin: 0; color: var(--orange); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 950; text-transform: uppercase; letter-spacing: -.04em; }
+    .date-meta { margin: 1.45rem 0 0; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.14); color: #f2e9f8; font-weight: 750; }
+
+    .quick-info { position: relative; z-index: 2; margin-top: -2.1rem; }
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--orange);
+      color: var(--ink);
+      box-shadow: 0 24px 70px rgba(0,0,0,.28);
+    }
+    .quick-item { padding: 1.35rem 1.5rem; border-right: 1px solid rgba(22,10,39,.18); }
+    .quick-item:last-child { border-right: 0; }
+    .quick-label { display: block; margin-bottom: .1rem; font-size: .78rem; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; opacity: .72; }
+    .quick-value { font-size: 1.08rem; font-weight: 900; }
+
+    section { padding: 6.4rem 0; }
+    .cream { background: var(--cream); color: var(--ink); }
+    .section-kicker { margin: 0 0 .55rem; color: #8c3d00; font-size: .87rem; font-weight: 950; letter-spacing: .1em; text-transform: uppercase; }
+    .section-title { max-width: 770px; margin: 0; font-size: clamp(2.35rem, 5vw, 4.5rem); line-height: .98; letter-spacing: -.055em; text-wrap: balance; }
+    .section-intro { max-width: 680px; margin: 1rem 0 0; color: #5c4e66; font-size: 1.08rem; }
+    .activity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
+    .activity {
+      min-height: 175px;
+      padding: 1.4rem;
+      border: 1px solid #e8dac7;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 12px 34px rgba(48,27,63,.06);
+    }
+    .activity-number { color: #b14a00; font-size: .8rem; font-weight: 950; letter-spacing: .09em; }
+    .activity h3 { margin: 1.6rem 0 .25rem; font-size: 1.3rem; line-height: 1.15; }
+    .activity p { margin: 0; color: #665a6f; }
+
+    .cause-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 8vw, 7rem); align-items: center; }
+    .cause-badge {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(255,122,24,.22), rgba(255,255,255,.04) 62%, transparent 63%);
+      text-align: center;
+      box-shadow: inset 0 0 0 16px rgba(255,255,255,.02);
+    }
+    .cause-badge strong { display: block; color: var(--orange); font-size: clamp(2rem, 5vw, 4.2rem); line-height: .95; letter-spacing: -.05em; }
+    .cause-badge span { display: block; margin-top: .75rem; color: var(--muted); font-weight: 750; }
+    .cause-copy p { color: var(--muted); font-size: 1.1rem; }
+    .cause-note { padding-left: 1rem; border-left: 3px solid var(--orange); color: var(--white) !important; font-weight: 750; }
+
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 2.4rem; }
+    .detail-card { padding: 1.65rem; border: 1px solid #e7d8c5; border-radius: 22px; background: var(--white); }
+    .detail-card h3 { margin: 0 0 .55rem; font-size: 1.32rem; }
+    .detail-card p { margin: 0; color: #665a6f; }
+    .detail-card a { color: #833900; font-weight: 850; text-underline-offset: 3px; }
+
+    .closing { padding: 5rem 0; text-align: center; background: var(--orange); color: var(--ink); }
+    .closing h2 { max-width: 850px; margin: 0 auto; font-size: clamp(2.4rem, 6vw, 5rem); line-height: .95; letter-spacing: -.065em; }
+    .closing p { max-width: 630px; margin: 1.1rem auto 0; font-size: 1.08rem; font-weight: 700; }
+    .closing .button { margin-top: 1.6rem; background: var(--ink); color: var(--white); }
+
+    footer { padding: 2rem 0; color: var(--muted); }
+    .footer-grid { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+    footer p { margin: 0; }
+
+    @media (max-width: 800px) {
+      .mini-date { display: none; }
+      .hero { min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; padding: 4rem 0 5rem; }
+      .date-card { max-width: 430px; transform: none; }
+      .quick-grid { grid-template-columns: 1fr; }
+      .quick-item { border-right: 0; border-bottom: 1px solid rgba(22,10,39,.18); }
+      .quick-item:last-child { border-bottom: 0; }
+      .activity-grid { grid-template-columns: 1fr 1fr; }
+      .cause-grid { grid-template-columns: 1fr; }
+      .cause-badge { width: min(100%, 410px); margin-inline: auto; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
+      .actions { display: grid; }
+      .button { width: 100%; }
+      .activity-grid, .details-grid { grid-template-columns: 1fr; }
+      section { padding: 4.5rem 0; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#accueil" aria-label="Retour au début">
+        <span class="brand-mark" aria-hidden="true">18</span>
+        <span>Fête familiale d’Halloween</span>
+      </a>
+      <span class="mini-date">18 octobre 2026 · Victoriaville</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Une journée pour toute la famille</p>
+          <h1>Fête familiale <span>d’Halloween</span></h1>
+          <p class="lede">Venez profiter d’une journée remplie de jeux, d’animation et de plaisir au parc Terre-des-Jeunes, au profit de la Fondation L’Ami-Temps des Bois-Francs.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=Parc+Terre-des-Jeunes+Victoriaville" target="_blank" rel="noopener">Voir l’emplacement</a>
+            <a class="button button-secondary" href="#activites">Découvrir les activités</a>
+          </div>
+        </div>
+
+        <aside class="date-card" aria-label="Date et heure de l’événement">
+          <span class="date-label">Dimanche</span>
+          <p class="date-number">18</p>
+          <p class="date-month">Octobre</p>
+          <p class="date-meta">De 10 h à 16 h<br>Parc Terre-des-Jeunes</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="quick-info">
+      <div class="wrap quick-grid">
+        <div class="quick-item">
+          <span class="quick-label">Quand</span>
+          <span class="quick-value">18 octobre 2026 · 10 h à 16 h</span>
+        </div>
+        <div class="quick-item">
+          <span class="quick-label">Où</span>
+          <span class="quick-value">Parc Terre-des-Jeunes, Victoriaville</span>
+        </div>
+        <div class="quick-item">
+          <span class="quick-label">Entrée</span>
+          <span class="quick-value">Détails à venir</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="cream" id="activites">
+      <div class="wrap">
+        <p class="section-kicker">Au programme</p>
+        <h2 class="section-title">Une journée pleine d’action, de rires et de petites frayeurs</h2>
+        <p class="section-intro">Des activités pour les enfants et les familles, dans une ambiance festive d’Halloween.</p>
+
+        <div class="activity-grid">
+          <article class="activity"><span class="activity-number">01</span><h3>Jeux gonflables</h3><p>Plusieurs structures pour bouger, grimper et s’amuser.</p></article>
+          <article class="activity"><span class="activity-number">02</span><h3>Maison hantée</h3><p>Une expérience amusante pour celles et ceux qui aiment les frissons.</p></article>
+          <article class="activity"><span class="activity-number">03</span><h3>Jeux médiévaux</h3><p>Des défis originaux à essayer en famille ou entre amis.</p></article>
+          <article class="activity"><span class="activity-number">04</span><h3>Animation</h3><p>De l’énergie et des surprises tout au long de la journée.</p></article>
+          <article class="activity"><span class="activity-number">05</span><h3>Musique</h3><p>Une ambiance festive pour accompagner la journée.</p></article>
+          <article class="activity"><span class="activity-number">06</span><h3>BBQ et collations</h3><p>De quoi reprendre des forces entre deux activités.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cause-title">
+      <div class="wrap cause-grid">
+        <div class="cause-badge" aria-hidden="true">
+          <div><strong>Jouer.<br>Aider.</strong><span>Chaque présence compte.</span></div>
+        </div>
+        <div class="cause-copy">
+          <p class="section-kicker" style="color: var(--orange-light)">Pour une bonne cause</p>
+          <h2 class="section-title" id="cause-title">Une fête qui soutient les familles d’ici</h2>
+          <p>L’événement est organisé au profit de la Fondation L’Ami-Temps des Bois-Francs, qui accompagne des familles de la région vivant des moments difficiles.</p>
+          <p class="cause-note">Ce projet est réalisé par Benjamin Brun, élève de secondaire 5 au PEI, dans le cadre de son projet personnel.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream" id="informations">
+      <div class="wrap">
+        <p class="section-kicker">Informations pratiques</p>
+        <h2 class="section-title">Tout ce qu’il faut savoir avant de venir</h2>
+        <div class="details-grid">
+          <article class="detail-card"><h3>Lieu</h3><p>Parc Terre-des-Jeunes, Victoriaville. <a href="https://www.google.com/maps/search/?api=1&query=Parc+Terre-des-Jeunes+Victoriaville" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>.</p></article>
+          <article class="detail-card"><h3>Horaire</h3><p>Dimanche 18 octobre 2026, de 10 h à 16 h.</p></article>
+          <article class="detail-card"><h3>Admission</h3><p>Le prix d’entrée et les modalités seront annoncés prochainement.</p></article>
+          <article class="detail-card"><h3>Météo</h3><p>Les dernières informations seront communiquées avant l’événement si la météo oblige un changement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2>Le 18 octobre, on se retrouve au parc.</h2>
+        <p>Invitez votre famille et vos amis pour une journée d’Halloween qui fait du bien.</p>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=Parc+Terre-des-Jeunes+Victoriaville" target="_blank" rel="noopener">Préparer mon trajet</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <p>Fête familiale d’Halloween · Victoriaville</p>
+      <p>Au profit de la Fondation L’Ami-Temps des Bois-Francs</p>
+    </div>
+  </footer>
+</body>
+</html>
