@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5c400">
+  <meta name="description" content="Fête familiale d'Halloween à Victoriaville — le 18 octobre 2026, de 10 h à 16 h, au parc Terre-des-Jeunes.">
+  <title>Fête familiale d'Halloween | Victoriaville</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c400'/%3E%3Cpath d='M18 48V27l14-12 14 12v21H18Z' fill='%23111111'/%3E%3Ccircle cx='27' cy='31' r='3' fill='%23f5c400'/%3E%3Ccircle cx='39' cy='31' r='3' fill='%23f5c400'/%3E%3Cpath d='M26 40h13' stroke='%23f5c400' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --black: #111111;
+      --yellow: #f5c400;
+      --yellow-light: #fff5b5;
+      --white: #ffffff;
+      --gray: #5b5b5b;
+      --line: #dedede;
+      --max: 1120px;
+      --radius: 22px;
+      --shadow: 0 14px 34px rgba(17, 17, 17, 0.11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--white);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      padding: 9px 16px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: var(--yellow);
+      border: 2px solid var(--black);
+      border-radius: 12px;
+      font-size: 1.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 700;
+      font-size: 0.93rem;
+    }
+
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 21px;
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--black);
+      box-shadow: 4px 4px 0 var(--black);
+      font: inherit;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--black); }
+    .button:focus-visible, a:focus-visible { outline: 4px solid var(--yellow); outline-offset: 4px; }
+    .button-dark { background: var(--black); color: var(--white); box-shadow: 4px 4px 0 var(--yellow); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 62px;
+      background:
+        linear-gradient(90deg, rgba(17,17,17,.035) 1px, transparent 1px),
+        linear-gradient(rgba(17,17,17,.035) 1px, transparent 1px),
+        var(--white);
+      background-size: 30px 30px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      right: -130px;
+      top: -150px;
+      background: var(--yellow);
+      border: 3px solid var(--black);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 20px;
+      padding: 7px 13px;
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      background: var(--yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.08; }
+
+    h1 {
+      max-width: 800px;
+      margin-bottom: 22px;
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      display: inline;
+      padding-inline: 0.08em;
+      background: linear-gradient(transparent 58%, var(--yellow) 58%);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      margin: 0 0 30px;
+      color: #333;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 15px; }
+
+    .ticket {
+      position: relative;
+      padding: 30px;
+      overflow: hidden;
+      background: var(--yellow);
+      border: 3px solid var(--black);
+      border-radius: var(--radius);
+      box-shadow: 12px 12px 0 var(--black);
+      transform: rotate(2deg);
+    }
+
+    .ticket::before, .ticket::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      background: var(--white);
+      border: 3px solid var(--black);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .ticket::before { left: -16px; }
+    .ticket::after { right: -16px; }
+    .ticket-label { margin: 0 0 3px; font-size: 0.77rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .ticket-value { margin: 0 0 20px; font-family: "Archivo Black", sans-serif; font-size: 1.5rem; line-height: 1.15; }
+    .ticket-price { padding-top: 18px; border-top: 2px dashed var(--black); }
+    .ticket-price strong { display: block; font-family: "Archivo Black", sans-serif; font-size: 2.8rem; line-height: 1; }
+
+    section { padding: 82px 0; }
+    .section-yellow { background: var(--yellow); border-block: 3px solid var(--black); }
+    .section-black { background: var(--black); color: var(--white); }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .section-heading p { max-width: 500px; margin: 0; color: var(--gray); }
+    .section-yellow .section-heading p { color: var(--black); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 230px;
+      padding: 27px;
+      background: var(--white);
+      border: 2px solid var(--black);
+      border-radius: var(--radius);
+      box-shadow: 6px 6px 0 var(--black);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
+      background: var(--yellow);
+      border: 2px solid var(--black);
+      border-radius: 15px;
+      font-size: 1.65rem;
+    }
+
+    .card h3 { margin-bottom: 9px; font-size: 1.2rem; }
+    .card p { margin: 0; color: var(--gray); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--white);
+      color: var(--black);
+      border: 3px solid var(--black);
+      border-radius: var(--radius);
+      box-shadow: 10px 10px 0 rgba(255,255,255,.2);
+      overflow: hidden;
+    }
+
+    .info-item { padding: 30px; }
+    .info-item + .info-item { border-left: 2px solid var(--black); }
+    .info-item small { display: block; margin-bottom: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .info-item strong { display: block; font-size: 1.25rem; line-height: 1.35; }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .countdown div {
+      padding: 20px 12px;
+      text-align: center;
+      background: var(--yellow);
+      color: var(--black);
+      border: 2px solid var(--white);
+      border-radius: 16px;
+    }
+
+    .countdown strong { display: block; font-family: "Archivo Black", sans-serif; font-size: clamp(1.7rem, 5vw, 3.2rem); line-height: 1; }
+    .countdown span { display: block; margin-top: 5px; font-weight: 800; font-size: .76rem; text-transform: uppercase; }
+
+    .cause {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .cause-badge {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 40px;
+      text-align: center;
+      background: var(--yellow);
+      border: 3px solid var(--black);
+      border-radius: 50%;
+      box-shadow: 12px 12px 0 var(--black);
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .cause p { color: var(--gray); font-size: 1.08rem; }
+
+    .cta {
+      padding: 60px 0;
+      background: var(--yellow);
+      border-top: 3px solid var(--black);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta h2 { margin-bottom: 10px; }
+    .cta p { margin: 0; font-weight: 600; }
+
+    footer { padding: 28px 0; background: var(--black); color: var(--white); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    footer p { margin: 0; font-size: .9rem; }
+    footer a { color: var(--yellow); font-weight: 700; }
+
+    @media (max-width: 820px) {
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding-top: 52px; }
+      .hero-grid, .cause { grid-template-columns: 1fr; }
+      .ticket { max-width: 500px; transform: none; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-item + .info-item { border-left: 0; border-top: 2px solid var(--black); }
+      .section-heading, .cta-inner { align-items: flex-start; flex-direction: column; }
+      .cause-badge { width: min(100%, 430px); margin-inline: auto; }
+    }
+
+    @media (max-width: 540px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .brand span:last-child { max-width: 150px; }
+      .nav-links .button { display: none; }
+      h1 { font-size: clamp(2.65rem, 15vw, 4.5rem); }
+      section { padding: 64px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      .countdown { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .hero::after { width: 260px; height: 260px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Un événement familial organisé à Victoriaville</div>
+
+  <header>
+    <nav class="container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Retour à l'accueil">
+        <span class="brand-mark" aria-hidden="true">🎃</span>
+        <span>Fête familiale<br>d’Halloween</span>
+      </a>
+      <div class="nav-links">
+        <a href="#activites">Activités</a>
+        <a href="#infos">Informations</a>
+        <a class="button" href="#venir">Je veux y aller</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">18 octobre 2026 · Victoriaville</p>
+          <h1>Une journée <span>monstrueusement</span> amusante</h1>
+          <p class="hero-copy">Jeux gonflables, maquillage, animations, jeux médiévaux et nourriture : une journée pensée pour faire bouger et sourire toute la famille.</p>
+          <div class="hero-actions">
+            <a class="button" href="#activites">Découvrir les activités</a>
+            <a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Parc+Terre-des-Jeunes+Victoriaville" target="_blank" rel="noopener">Voir le lieu</a>
+          </div>
+        </div>
+
+        <aside class="ticket" aria-label="Informations principales">
+          <p class="ticket-label">Quand</p>
+          <p class="ticket-value">Dimanche<br>18 octobre 2026<br>10 h à 16 h</p>
+          <p class="ticket-label">Où</p>
+          <p class="ticket-value">Parc Terre-des-Jeunes<br>Victoriaville</p>
+          <div class="ticket-price">
+            <p class="ticket-label">Entrée</p>
+            <strong>5 $</strong>
+            <span>par enfant</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="activites">
+      <div class="container">
+        <div class="section-heading">
+          <h2>À faire sur place</h2>
+          <p>Des activités variées pour profiter de l’automne et célébrer l’Halloween en famille.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏰</div>
+            <h3>Jeux gonflables</h3>
+            <p>Des structures amusantes où les enfants pourront sauter, grimper et se dépenser.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🎨</div>
+            <h3>Maquillage</h3>
+            <p>Des maquillages colorés pour devenir un personnage d’Halloween le temps d’une journée.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⚔️</div>
+            <h3>Jeux médiévaux</h3>
+            <p>Des défis simples et ludiques inspirés de l’univers des chevaliers.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">👻</div>
+            <h3>Maison hantée</h3>
+            <p>Une expérience mystérieuse dans une ambiance d’Halloween adaptée aux familles.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🎵</div>
+            <h3>Musique et animation</h3>
+            <p>Une ambiance festive tout au long de l’événement avec de l’animation sur place.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🍔</div>
+            <h3>Nourriture</h3>
+            <p>De la nourriture et des collations seront offertes à l’achat pendant la journée.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-black" id="infos">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Les informations</h2>
+          <p style="color:#d7d7d7">Notez la date et venez profiter de la journée avec nous.</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <small>Date</small>
+            <strong>Dimanche 18 octobre 2026</strong>
+          </div>
+          <div class="info-item">
+            <small>Heure</small>
+            <strong>De 10 h à 16 h</strong>
+          </div>
+          <div class="info-item">
+            <small>Adresse</small>
+            <strong>Parc Terre-des-Jeunes, Victoriaville</strong>
+          </div>
+        </div>
+
+        <div class="countdown" id="countdown" aria-label="Compte à rebours avant l'événement">
+          <div><strong id="days">--</strong><span>jours</span></div>
+          <div><strong id="hours">--</strong><span>heures</span></div>
+          <div><strong id="minutes">--</strong><span>minutes</span></div>
+          <div><strong id="seconds">--</strong><span>secondes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cause">
+        <div class="cause-badge">S’amuser<br>pour une<br>bonne cause</div>
+        <div>
+          <p class="eyebrow">Notre objectif</p>
+          <h2>Une journée qui fait une différence</h2>
+          <p>Cette fête familiale est réalisée dans le cadre d’un projet personnel du Programme d’éducation internationale. Les profits serviront à soutenir des familles d’enfants malades.</p>
+          <p>En participant, vous profitez d’une belle journée tout en contribuant à une cause importante dans notre communauté.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="venir">
+      <div class="container cta-inner">
+        <div>
+          <h2>On se voit le 18 octobre!</h2>
+          <p>Parc Terre-des-Jeunes · Victoriaville · 10 h à 16 h</p>
+        </div>
+        <div class="hero-actions">
+          <button class="button button-dark" id="calendarButton" type="button">Ajouter au calendrier</button>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=Parc+Terre-des-Jeunes+Victoriaville" target="_blank" rel="noopener">Obtenir l’itinéraire</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Fête familiale d’Halloween · Victoriaville</p>
+      <a href="#accueil">Retour en haut ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const eventDate = new Date("2026-10-18T10:00:00-04:00");
+    const countdown = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const difference = eventDate.getTime() - Date.now();
+
+      if (difference <= 0) {
+        countdown.innerHTML = "<div style='grid-column:1/-1'><strong style='font-size:1.8rem'>C’est aujourd’hui!</strong><span>Venez célébrer avec nous de 10 h à 16 h</span></div>";
+        return;
+      }
+
+      document.getElementById("days").textContent = Math.floor(difference / 86400000);
+      document.getElementById("hours").textContent = Math.floor((difference % 86400000) / 3600000);
+      document.getElementById("minutes").textContent = Math.floor((difference % 3600000) / 60000);
+      document.getElementById("seconds").textContent = Math.floor((difference % 60000) / 1000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById("calendarButton").addEventListener("click", () => {
+      const calendar = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Fete familiale Halloween//FR",
+        "BEGIN:VEVENT",
+        "UID:fete-familiale-2026@victoriaville",
+        "DTSTAMP:20260923T120000Z",
+        "DTSTART:20261018T140000Z",
+        "DTEND:20261018T200000Z",
+        "SUMMARY:Fête familiale d'Halloween",
+        "LOCATION:Parc Terre-des-Jeunes, Victoriaville, Québec",
+        "DESCRIPTION:Jeux gonflables, maquillage, jeux médiévaux, animation et nourriture.",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const file = new Blob([calendar], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(file);
+      link.download = "fete-familiale-halloween-2026.ics";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(link.href);
+    });
+  </script>
+</body>
+</html>
